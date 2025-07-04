@@ -116,7 +116,7 @@ export function apply(ctx: Context) {
         if (reQNHhPa.test(token)) {
           // QNH token: Qpppp -- pppp is pressure hPa 
           add_output("修正海压： ");
-          add_output(parseInt(token.substr(1, 4), 10) + " 毫巴 (约 ");
+          add_output(parseInt(token.substr(1, 4), 10) + " 百帕 (约 ");
           add_output((76000 / (101325 * 25.4) * parseInt(token.substr(1, 4), 10)).toFixed(2));
           add_output(" 英寸汞柱)<br>"); return;
         }
@@ -126,7 +126,7 @@ export function apply(ctx: Context) {
           add_output("修正海压： ");
           add_output(parseInt(token.substr(3, 4), 10) + " 英寸汞柱 (约 ");
           add_output(Math.round((25.4 * 101325) / 7600000 * parseInt(token.substr(3, 4), 10)));
-          add_output(" 毫巴)<br>"); return;
+          add_output(" 百帕)<br>"); return;
         }
 
         // Check if token is QNH indication in mmHg: Annnn
@@ -135,7 +135,7 @@ export function apply(ctx: Context) {
           add_output("修正海压： ");
           add_output(token.substr(1, 2) + "." + token.substr(3, 4) + " 英寸汞柱 (约 ");
           add_output(Math.round((25.4 * 101325) / 7600000 * parseInt(token.substr(1, 4), 10)));
-          add_output(" 毫巴)<br>"); return;
+          add_output(" 百帕)<br>"); return;
         }
 
         // Check if token is runway visual range (RVR) indication

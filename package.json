@@ -1,7 +1,7 @@
 {
   "name": "koishi-plugin-metar-taf-parser",
   "description": "航空气象报文解析（支持METAR,SPECI,TAF）",
-  "version": "1.0.0",
+  "version": "1.0.",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
